@@ -14,7 +14,6 @@ export default class Shoesstore extends Component {
   };
 
   handleDetail = (element, isClick) => {
-    console.log(element, isClick);
     this.setState({
       shoeDetail: element,
       isShow: isClick,
@@ -53,9 +52,6 @@ export default class Shoesstore extends Component {
     this.setState(
       {
         cartList: data,
-      },
-      () => {
-        console.log(this.state.cartList);
       }
     );
   };
@@ -63,7 +59,7 @@ export default class Shoesstore extends Component {
   handleQuantity = (id, isIncrease) => {
     const data = [...this.state.cartList];
     const index = data.findIndex((element) => {
-      return element.maSP === id;
+      return element.id === id;
     });
     if (isIncrease) {
       // tang so luong sp
@@ -79,9 +75,6 @@ export default class Shoesstore extends Component {
     this.setState(
       {
         cartList: data,
-      },
-      () => {
-        console.log(this.state.cartList);
       }
     );
   };
@@ -97,9 +90,6 @@ export default class Shoesstore extends Component {
       this.setState(
         {
           cartList: data,
-        },
-        () => {
-          console.log(this.state.cartList);
         }
       );
     }
